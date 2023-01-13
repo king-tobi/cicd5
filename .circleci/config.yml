@@ -30,9 +30,9 @@ jobs:
           command: |
             apk add --update ansible   
       - run:
-        name: Run Playbook and Configure server
-        command: |
-          ansible-playbook -i [inventory-file] [playbook-file]
+          name: Run Playbook and Configure server
+          command: |
+            ansible-playbook -i [inventory-file] [playbook-file]
 
 workflows:
   my_workflow:
