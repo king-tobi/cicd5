@@ -45,6 +45,22 @@ jobs:
           command: |
             ansible-playbook -i inventory.txt main-remote.yml
 
+  smoke_test:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run: apk add --update curl
+      - run:
+          name: smoke test
+          command: |
+            URL="https://blog.udacity.com/"
+            # Test if website exists
+            if curl -s --head ${URL} 
+            then
+              return 0
+            else
+              return 1
+            fi
   failed_smoke_test:
     docker: 
       - image: alpine:latest
@@ -62,5 +78,5 @@ workflows:
     jobs:
       - create_infrastructure
       #- configure_infrastructure
-      - failed_smoke_test
+      - smoke_test
       
