@@ -1,4 +1,4 @@
-# Exercise - Rollback
+# Exercise: create -infrastructure
 AWSTemplateFormatVersion: 2010-09-09
 Description: Template for the ci/cd insfrastructure deployment
 
