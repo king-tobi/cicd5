@@ -65,7 +65,7 @@ jobs:
 
   failed_smoke_test:
     docker: 
-      - image: amazon/aws-cli
+      - image: alpine:latest
     steps:
       - checkout
       - run:
